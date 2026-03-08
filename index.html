@@ -1,12 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
-<title>Novomanželé Hybnerovi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Svatební web</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Celá stránka jako flex container */
+  body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center; /* horizontální centrování */
+    align-items: center;     /* vertikální centrování */
+    font-family: Arial, sans-serif;
+    background-color: #f7f0e9;
+  }
+
+  /* Hlavní kontejner */
+  .container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px; /* pro telefony */
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 16px;
+    color: #d2691e;
+  }
+
+  p {
+    margin-bottom: 12px;
+    color: #555555;
+  }
+
+  /* Centrované divy */
+  .box {
+    background-color: #ffe4c4;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+
+  /* Responsivní font pro menší telefony */
+  @media (max-width: 320px) {
+    h1 {
+      font-size: 1.5em;
+    }
+    .box {
+      font-size: 0.9em;
+    }
+  }
+</style>
 </head>
 <body>
+  <div class="container">
+    <h1>Vítejte na našem svatebním webu!</h1>
+    <p>Jsme rádi, že jste s námi.</p>
 
-<h1>Ahoj Verunky</h1>
-<p>Moje první stránka.</p>
-
+    <div class="box">Informace o obřadu</div>
+    <div class="box">Místo konání</div>
+    <div class="box">RSVP</div>
+    <div class="box">Galerie fotek</div>
+  </div>
 </body>
 </html>
