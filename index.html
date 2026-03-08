@@ -65,6 +65,17 @@ letter-spacing:2px;
 text-shadow:0 3px 10px rgba(0,0,0,0.6);
 }
 
+/* COUNTDOWN */
+
+#countdown{
+margin-top:10px;
+color:white;
+font-size:16px;
+letter-spacing:2px;
+text-shadow:0 3px 10px rgba(0,0,0,0.6);
+font-weight:bold;
+}
+
 /* OBSAH */
 
 .main{
@@ -93,24 +104,28 @@ font-size:28px;
 font-size:22px;
 }
 
+#countdown{
+font-size:20px;
+}
+
 }
 
 .cinzel-decorative-regular {
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 400;
-  font-style: normal;
+font-family: "Cinzel Decorative", serif;
+font-weight: 400;
+font-style: normal;
 }
 
 .cinzel-decorative-bold {
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 700;
-  font-style: normal;
+font-family: "Cinzel Decorative", serif;
+font-weight: 700;
+font-style: normal;
 }
 
 .cinzel-decorative-black {
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 900;
-  font-style: normal;
+font-family: "Cinzel Decorative", serif;
+font-weight: 900;
+font-style: normal;
 }
 
 /* TEXT */
@@ -148,6 +163,7 @@ font-weight:bold;
 <div class="header-text">
 <h1>VERONIKA A DANIEL</h1>
 <h2>25. 8. 2026</h2>
+<div id="countdown"></div>
 </div>
 
 </header>
@@ -163,6 +179,32 @@ font-weight:bold;
 <div class="box">Galerie fotek</div>
 
 </div>
+
+<script>
+
+const targetDate = new Date("August 25, 2026 12:00:00").getTime();
+
+const countdown = setInterval(function() {
+
+const now = new Date().getTime();
+const distance = targetDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+days + " dní " + hours + " h " + minutes + " m " + seconds + " s";
+
+if (distance < 0) {
+clearInterval(countdown);
+document.getElementById("countdown").innerHTML = "Je to tady!";
+}
+
+}, 1000);
+
+</script>
 
 </body>
 </html>
