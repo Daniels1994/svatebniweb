@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Svatební web</title>
 
+<!-- Google font -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 
 *{
@@ -19,7 +22,9 @@ body{
 }
 
 /* HEADER */
+
 header{
+  position:relative;
   width:100%;
 }
 
@@ -29,7 +34,32 @@ header img{
   height:auto;
 }
 
-/* OBSAH POD HEADEREM */
+/* TEXT NA OBRÁZKU */
+
+.header-text{
+  position:absolute;
+  bottom:30%;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+  color:white;
+  font-family:'Cinzel Decorative', serif;
+  text-shadow:0 3px 10px rgba(0,0,0,0.6);
+}
+
+.header-text h1{
+  font-size:42px;
+  letter-spacing:3px;
+}
+
+.header-text p{
+  margin-top:10px;
+  font-size:20px;
+  letter-spacing:2px;
+}
+
+/* OBSAH */
+
 .main{
   background:#FBF9F9;
   width:100%;
@@ -38,6 +68,7 @@ header img{
 }
 
 /* PC verze */
+
 @media (min-width:700px){
 
   .main{
@@ -47,12 +78,19 @@ header img{
     box-shadow:0 4px 12px rgba(0,0,0,0.08);
   }
 
+  .header-text h1{
+    font-size:56px;
+  }
+
+  .header-text p{
+    font-size:24px;
+  }
+
 }
 
 /* TEXT */
 
-h1{
-  font-size:2em;
+h2{
   margin-bottom:15px;
   color:#d2691e;
 }
@@ -78,12 +116,19 @@ p{
 <body>
 
 <header>
+
 <img src="header.png" alt="Header">
+
+<div class="header-text">
+<h1>VERONIKA A DANIEL</h1>
+<p>25. 8. 2026</p>
+</div>
+
 </header>
 
 <div class="main">
 
-<h1>Vítejte na našem svatebním webu!</h1>
+<h2>Vítejte na našem svatebním webu</h2>
 <p>Jsme rádi, že jste s námi.</p>
 
 <div class="box">Informace o obřadu</div>
