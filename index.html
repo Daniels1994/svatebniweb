@@ -12,14 +12,31 @@
     box-sizing: border-box;
   }
 
-  /* Celá stránka jako flex container */
   body, html {
-    height: 100%;
-    display: flex;
-    justify-content: center; /* horizontální centrování */
-    align-items: center;     /* vertikální centrování */
+    min-height: 100%;
     font-family: Arial, sans-serif;
     background-color: #f7f0e9;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  header img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* Celá stránka jako flex container */
+  .container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
   }
 
   /* Hlavní kontejner */
@@ -31,6 +48,7 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     width: 90%;
     max-width: 400px; /* pro telefony */
+    margin-top: 20px;
   }
 
   h1 {
@@ -44,7 +62,6 @@
     color: #555555;
   }
 
-  /* Centrované divy */
   .box {
     background-color: #ffe4c4;
     padding: 12px;
@@ -53,7 +70,6 @@
     font-weight: bold;
   }
 
-  /* Responsivní font pro menší telefony */
   @media (max-width: 320px) {
     h1 {
       font-size: 1.5em;
@@ -65,14 +81,21 @@
 </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Vítejte na našem svatebním webu!</h1>
-    <p>Jsme rádi, že jste s námi.</p>
+  <!-- Header s obrázkem -->
+  <header>
+    <img src="header.png" alt="Header obrázek">
+  </header>
 
-    <div class="box">Informace o obřadu</div>
-    <div class="box">Místo konání</div>
-    <div class="box">RSVP</div>
-    <div class="box">Galerie fotek</div>
+  <div class="container-wrapper">
+    <div class="container">
+      <h1>Vítejte na našem svatebním webu!</h1>
+      <p>Jsme rádi, že jste s námi.</p>
+
+      <div class="box">Informace o obřadu</div>
+      <div class="box">Místo konání</div>
+      <div class="box">RSVP</div>
+      <div class="box">Galerie fotek</div>
+    </div>
   </div>
 </body>
 </html>
