@@ -4,98 +4,95 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Svatební web</title>
+
 <style>
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background-color:#f7f0e9;
+}
+
+/* HEADER */
+header{
+  width:100%;
+}
+
+header img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* BÍLÁ STŘEDOVÁ SEKCE */
+.main-section{
+  background:white;
+  max-width:500px;
+  margin:auto;
+  margin-top:20px;
+  padding:30px 20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  text-align:center;
+}
+
+/* TEXT */
+h1{
+  font-size:2em;
+  margin-bottom:16px;
+  color:#d2691e;
+}
+
+p{
+  margin-bottom:16px;
+  color:#555;
+}
+
+/* BOX MENU */
+.box{
+  background:#ffe4c4;
+  padding:14px;
+  margin:10px 0;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+/* MOBILY */
+@media (max-width:600px){
+  .main-section{
+    margin:10px;
+    padding:20px;
   }
 
-  body, html {
-    min-height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f7f0e9;
+  h1{
+    font-size:1.6em;
   }
+}
 
-  /* Header */
-  header {
-    text-align: center;
-    padding: 20px 0;
-  }
-
-  header img {
-    max-width: 90%;
-    height: auto;
-    border-radius: 12px;
-  }
-
-  /* Celá stránka jako flex container */
-  .container-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  /* Hlavní kontejner */
-  .container {
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 90%;
-    max-width: 400px; /* pro telefony */
-    margin-top: 20px;
-  }
-
-  h1 {
-    font-size: 2em;
-    margin-bottom: 16px;
-    color: #d2691e;
-  }
-
-  p {
-    margin-bottom: 12px;
-    color: #555555;
-  }
-
-  .box {
-    background-color: #ffe4c4;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 8px;
-    font-weight: bold;
-  }
-
-  @media (max-width: 320px) {
-    h1 {
-      font-size: 1.5em;
-    }
-    .box {
-      font-size: 0.9em;
-    }
-  }
 </style>
 </head>
+
 <body>
-  <!-- Header s obrázkem -->
-  <header>
-    <img src="header.png" alt="Header obrázek">
-  </header>
 
-  <div class="container-wrapper">
-    <div class="container">
-      <h1>Vítejte na našem svatebním webu!</h1>
-      <p>Jsme rádi, že jste s námi.</p>
+<header>
+<img src="header.png" alt="Header">
+</header>
 
-      <div class="box">Informace o obřadu</div>
-      <div class="box">Místo konání</div>
-      <div class="box">RSVP</div>
-      <div class="box">Galerie fotek</div>
-    </div>
-  </div>
+<div class="main-section">
+
+<h1>Vítejte na našem svatebním webu!</h1>
+<p>Jsme rádi, že jste s námi.</p>
+
+<div class="box">Informace o obřadu</div>
+<div class="box">Místo konání</div>
+<div class="box">RSVP</div>
+<div class="box">Galerie fotek</div>
+
+</div>
+
 </body>
 </html>
