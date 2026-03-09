@@ -84,7 +84,7 @@ header img{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   grid-template-rows:auto auto;
-  column-gap:10px; /* výchozí mezera mezi sloupci */
+  column-gap:18px; /* mezera mezi sloupci v mobilu */
 }
 
 /* čísla */
@@ -104,8 +104,8 @@ header img{
   margin-top:8px;
 }
 
-/* UVÍTACÍ BOX */
-.welcome-box{
+/* BUBLINY */
+.welcome-box, .info-box, .transport-box{
   background:#F4EFE8;
   border-radius:16px;
   padding:20px;
@@ -149,7 +149,7 @@ header img{
   }
 
   #countdown{
-    column-gap:20px; /* větší mezera mezi sloupci na PC */
+    column-gap:20px;
   }
 
   .header-text h1{
@@ -160,17 +160,10 @@ header img{
     font-size:22px;
   }
 
-  .welcome-box{
+  .welcome-box, .info-box, .transport-box{
     font-size:16px;
     line-height:1.8;
     padding:25px;
-  }
-}
-
-/* MOBILNÍ VERZE - větší mezera mezi sloupci */
-@media (max-width:699px){
-  #countdown{
-    column-gap:18px; /* větší mezera mezi sloupci na mobilu */
   }
 }
 
@@ -227,6 +220,20 @@ Vítáme vás na našem svatebním webu!<br>
 Budeme moc rádi, když s námi oslavíte naši lásku a stanete se součástí tohoto výjimečného dne.<br>
 Protože se svatba koná v úterý, budeme vděční, pokud si vyhradíte dva dny volna, aby nám nic nebránilo slavit společně až do ranních hodin.<br>
 Níže najdete všechny důležité informace:
+</div>
+
+<!-- BUBLINA SVATEBNÍ MÍSTO -->
+<div class="info-box">
+<h3>Svatební místo</h3>
+Obřad a hostina se budou konat na jednom místě a to na Zámku Chałupki.
+</div>
+
+<!-- BUBLINA DOPRAVA -->
+<div class="transport-box">
+<h3>Doprava</h3>
+Na místo se prosím dostavte autem, parkoviště je zdarma.<br>
+Zámek Chałupki, Bogumińska 30<br>
+Večer budou zajištění řidiči, kteří vás i s vaším autem zavezou domů.
 </div>
 
 <div class="main">
