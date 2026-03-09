@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Svatební web</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -26,7 +23,6 @@ text-align:center;
 }
 
 /* HEADER */
-
 header{
 position:relative;
 width:100%;
@@ -38,7 +34,6 @@ display:block;
 }
 
 /* TEXT NA HEADERU */
-
 .header-text{
 position:absolute;
 bottom:12%;
@@ -66,7 +61,6 @@ text-shadow:0 3px 10px rgba(0,0,0,0.6);
 }
 
 /* TIMER */
-
 .timer-wrapper{
 display:flex;
 justify-content:center;
@@ -74,32 +68,26 @@ margin-top:25px;
 }
 
 #countdown{
-
 background-image:url("timer.png");
 background-size:contain;
 background-repeat:no-repeat;
 background-position:center;
-
 padding:45px 30px;
 width:320px;
-
 display:grid;
 grid-template-columns:repeat(4,1fr);
 grid-template-rows:auto auto;
-
 color:white;
 text-shadow:0 3px 10px rgba(0,0,0,0.6);
 }
 
 /* čísla */
-
 .time-number{
 font-size:28px;
 font-weight:bold;
 }
 
 /* text pod čísly */
-
 .time-label{
 font-size:12px;
 color:#d4af37;
@@ -107,19 +95,30 @@ letter-spacing:1px;
 margin-top:4px;
 }
 
-/* OBSAH */
+/* UVÍTACÍ BOX */
+.welcome-box{
+background:#F4EFE8;
+border-radius:12px;
+padding:20px;
+margin:20px auto;
+max-width:420px;
+text-align:left;
+color:#555;
+line-height:1.6;
+font-size:15px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
 
+/* OBSAH */
 .main{
-background:#FBF9F9;
 width:100%;
 padding:25px;
 margin-top:20px;
+text-align:center;
 }
 
 /* PC VERZE */
-
 @media (min-width:700px){
-
 .main{
 max-width:420px;
 margin:30px auto;
@@ -143,10 +142,14 @@ font-size:28px;
 font-size:22px;
 }
 
+.welcome-box{
+font-size:16px;
+line-height:1.8;
+padding:25px;
+}
 }
 
 /* TEXT */
-
 h3{
 margin-bottom:15px;
 color:#d2691e;
@@ -158,7 +161,6 @@ color:#555;
 }
 
 /* BOX */
-
 .box{
 background:#ffe4c4;
 padding:14px;
@@ -166,28 +168,22 @@ margin:10px 0;
 border-radius:8px;
 font-weight:bold;
 }
-
 </style>
-
 </head>
 
 <body>
 
 <header>
-
 <img src="header.png" alt="Header">
-
 <div class="header-text">
 <h1>VERONIKA A DANIEL</h1>
 <h2>25. 8. 2026</h2>
 </div>
-
 </header>
 
+<!-- TIMER -->
 <div class="timer-wrapper">
-
 <div id="countdown">
-
 <div class="time-number" id="days">0</div>
 <div class="time-number" id="hours">0</div>
 <div class="time-number" id="minutes">0</div>
@@ -197,29 +193,27 @@ font-weight:bold;
 <div class="time-label">HODIN</div>
 <div class="time-label">MINUT</div>
 <div class="time-label">SEKUND</div>
-
+</div>
 </div>
 
+<!-- UVÍTACÍ TEXT -->
+<div class="welcome-box">
+Vítáme vás na našem svatebním webu!<br><br>
+Budeme moc rádi, když s námi oslavíte naši lásku a stanete se součástí tohoto výjimečného dne. Protože se svatba koná v úterý, budeme vděční, pokud si vyhradíte dva dny volna, aby nám nic nebránilo slavit společně až do ranních hodin. Níže najdete všechny důležité informace:
 </div>
 
 <div class="main">
-
-<h3>Vítejte na našem svatebním webu</h3>
-<p>Jsme rádi, že jste s námi.</p>
-
+<h3>Další informace</h3>
 <div class="box">Informace o obřadu</div>
 <div class="box">Místo konání</div>
 <div class="box">RSVP</div>
 <div class="box">Galerie fotek</div>
-
 </div>
 
 <script>
-
 const targetDate = new Date("August 25, 2026 12:00:00").getTime();
 
 setInterval(function(){
-
 const now = new Date().getTime();
 const distance = targetDate - now;
 
@@ -236,9 +230,7 @@ document.getElementById("seconds").innerText = seconds;
 if(distance < 0){
 document.getElementById("countdown").innerHTML="Je to tady!";
 }
-
 },1000);
-
 </script>
 
 </body>
