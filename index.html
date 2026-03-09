@@ -34,11 +34,10 @@ width:100%;
 
 header img{
 width:100%;
-height:auto;
 display:block;
 }
 
-/* TEXT ON HEADER */
+/* TEXT NA HEADERU */
 
 .header-text{
 position:absolute;
@@ -52,7 +51,7 @@ width:90%;
 
 .header-text h1{
 color:white;
-font-size:21px;
+font-size:22px;
 letter-spacing:3px;
 text-shadow:0 3px 10px rgba(0,0,0,0.6);
 white-space:nowrap;
@@ -66,41 +65,58 @@ letter-spacing:2px;
 text-shadow:0 3px 10px rgba(0,0,0,0.6);
 }
 
-/* TIMER SECTION */
+/* TIMER */
 
 .timer-wrapper{
 display:flex;
 justify-content:center;
-margin-top:20px;
+margin-top:25px;
 }
 
 #countdown{
-color:white;
-font-size:18px;
-letter-spacing:2px;
-font-weight:bold;
-text-shadow:0 3px 10px rgba(0,0,0,0.6);
 
 background-image:url("timer.png");
 background-size:contain;
 background-repeat:no-repeat;
 background-position:center;
 
-padding:40px 60px;
-min-width:260px;
+padding:45px 30px;
+width:320px;
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+grid-template-rows:auto auto;
+
+color:white;
+text-shadow:0 3px 10px rgba(0,0,0,0.6);
 }
 
-/* CONTENT */
+/* čísla */
+
+.time-number{
+font-size:28px;
+font-weight:bold;
+}
+
+/* text pod čísly */
+
+.time-label{
+font-size:12px;
+color:#d4af37;
+letter-spacing:1px;
+margin-top:4px;
+}
+
+/* OBSAH */
 
 .main{
 background:#FBF9F9;
 width:100%;
 padding:25px;
-text-align:center;
 margin-top:20px;
 }
 
-/* PC VERSION */
+/* PC VERZE */
 
 @media (min-width:700px){
 
@@ -111,17 +127,20 @@ border-radius:12px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
+.time-number{
+font-size:34px;
+}
+
+.time-label{
+font-size:14px;
+}
+
 .header-text h1{
 font-size:28px;
 }
 
 .header-text h2{
 font-size:22px;
-}
-
-#countdown{
-font-size:22px;
-padding:45px 70px;
 }
 
 }
@@ -166,7 +185,21 @@ font-weight:bold;
 </header>
 
 <div class="timer-wrapper">
-<div id="countdown"></div>
+
+<div id="countdown">
+
+<div class="time-number" id="days">0</div>
+<div class="time-number" id="hours">0</div>
+<div class="time-number" id="minutes">0</div>
+<div class="time-number" id="seconds">0</div>
+
+<div class="time-label">DNÍ</div>
+<div class="time-label">HODIN</div>
+<div class="time-label">MINUT</div>
+<div class="time-label">SEKUND</div>
+
+</div>
+
 </div>
 
 <div class="main">
@@ -185,7 +218,7 @@ font-weight:bold;
 
 const targetDate = new Date("August 25, 2026 12:00:00").getTime();
 
-const countdown = setInterval(function() {
+setInterval(function(){
 
 const now = new Date().getTime();
 const distance = targetDate - now;
@@ -195,15 +228,16 @@ const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-document.getElementById("countdown").innerHTML =
-days + " dní " + hours + " h " + minutes + " m " + seconds + " s";
+document.getElementById("days").innerText = days;
+document.getElementById("hours").innerText = hours;
+document.getElementById("minutes").innerText = minutes;
+document.getElementById("seconds").innerText = seconds;
 
-if (distance < 0) {
-clearInterval(countdown);
-document.getElementById("countdown").innerHTML = "Je to tady!";
+if(distance < 0){
+document.getElementById("countdown").innerHTML="Je to tady!";
 }
 
-}, 1000);
+},1000);
 
 </script>
 
