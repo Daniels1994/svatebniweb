@@ -13,7 +13,7 @@
 <style>
 @font-face {
   font-family: 'Halimum';
-  src: url('Halimum-Regular.ttf') format('truetype');
+  src: url('Halimun.otf') format('opentype');
 }
 
 /* Reset */
@@ -84,6 +84,7 @@ header img{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   grid-template-rows:auto auto;
+  column-gap:10px; /* výchozí mezera mezi sloupci */
 }
 
 /* čísla */
@@ -109,12 +110,12 @@ header img{
   border-radius:16px;
   padding:20px;
   margin:20px auto;
-  width:90%; /* 90% šířky stránky */
+  width:90%;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  text-align:center; /* centrování textu */
+  text-align:center;
   color:#555;
   line-height:1.6;
   font-size:15px;
@@ -147,6 +148,10 @@ header img{
     margin-top:10px;
   }
 
+  #countdown{
+    column-gap:20px; /* větší mezera mezi sloupci na PC */
+  }
+
   .header-text h1{
     font-size:28px;
   }
@@ -159,6 +164,13 @@ header img{
     font-size:16px;
     line-height:1.8;
     padding:25px;
+  }
+}
+
+/* MOBILNÍ VERZE - větší mezera mezi sloupci */
+@media (max-width:699px){
+  #countdown{
+    column-gap:18px; /* větší mezera mezi sloupci na mobilu */
   }
 }
 
