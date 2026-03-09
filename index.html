@@ -15,6 +15,11 @@
   src: url('Halimun.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'LeJourScript';
+  src: url('LeJourScript-Eaqpg.otf') format('opentype');
+}
+
 *{
   margin:0;
   padding:0;
@@ -126,6 +131,15 @@ header img{
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
+/* nadpisy u bublin budou v LeJourScript */
+.info-box h3,
+.transport-box h3{
+  font-family: 'LeJourScript', cursive;
+  font-size:24px;
+  margin-bottom:15px;
+  color:#d2691e;
+}
+
 /* obrázek pod welcome textem */
 .under-welcome{
   width:140px;
@@ -164,6 +178,7 @@ header img{
 }
 
 h3{
+  /* default h3 style pro jiné h3, pokud nějaké budou */
   margin-bottom:15px;
   color:#d2691e;
 }
@@ -226,11 +241,9 @@ Večer budou zajištění řidiči, kteří vás i s vaším autem zavezou domů
 </div>
 
 <script>
-
 const targetDate = new Date("August 25, 2026 12:00:00").getTime();
 
 setInterval(function(){
-
 const now = new Date().getTime();
 const distance = targetDate - now;
 
@@ -247,9 +260,7 @@ document.getElementById("seconds").innerText = seconds;
 if(distance < 0){
 document.getElementById("countdown").innerHTML="Je to tady!";
 }
-
 },1000);
-
 </script>
 
 </body>
