@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Svatební web</title>
 
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -16,7 +15,6 @@
   src: url('Halimun.otf') format('opentype');
 }
 
-/* Reset */
 *{
   margin:0;
   padding:0;
@@ -84,13 +82,13 @@ header img{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   grid-template-rows:auto auto;
-  column-gap:18px; /* mezera mezi sloupci v mobilu */
+  column-gap:18px;
 }
 
 /* čísla */
 .time-number{
   font-family: 'Open Sans', sans-serif;
-  font-size:28px;
+  font-size:22px;
   font-weight:bold;
   color:#dab33b;
 }
@@ -98,7 +96,7 @@ header img{
 /* text pod čísly */
 .time-label{
   font-family: 'Halimum', serif;
-  font-size:12px;
+  font-size:10px;
   color:#dab33b;
   letter-spacing:1px;
   margin-top:8px;
@@ -122,30 +120,15 @@ header img{
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* OBSAH */
-.main{
-  width:100%;
-  padding:25px;
-  margin-top:20px;
-  text-align:center;
-}
-
 /* PC VERZE */
 @media (min-width:700px){
-  .main{
-    max-width:420px;
-    margin:30px auto;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-  }
 
   .time-number{
-    font-size:34px;
+    font-size:28px;
   }
 
   .time-label{
-    font-size:14px;
-    margin-top:10px;
+    font-size:12px;
   }
 
   #countdown{
@@ -167,24 +150,9 @@ header img{
   }
 }
 
-/* TEXT */
 h3{
   margin-bottom:15px;
   color:#d2691e;
-}
-
-p{
-  margin-bottom:15px;
-  color:#555;
-}
-
-/* BOX */
-.box{
-  background:#ffe4c4;
-  padding:14px;
-  margin:10px 0;
-  border-radius:8px;
-  font-weight:bold;
 }
 </style>
 </head>
@@ -202,6 +170,7 @@ p{
 <!-- TIMER -->
 <div class="timer-wrapper">
 <div id="countdown">
+
 <div class="time-number" id="days">0</div>
 <div class="time-number" id="hours">0</div>
 <div class="time-number" id="minutes">0</div>
@@ -211,6 +180,7 @@ p{
 <div class="time-label">hodin</div>
 <div class="time-label">minut</div>
 <div class="time-label">sekund</div>
+
 </div>
 </div>
 
@@ -234,14 +204,6 @@ Obřad a hostina se budou konat na jednom místě a to na Zámku Chałupki.
 Na místo se prosím dostavte autem, parkoviště je zdarma.<br>
 Zámek Chałupki, Bogumińska 30<br>
 Večer budou zajištění řidiči, kteří vás i s vaším autem zavezou domů.
-</div>
-
-<div class="main">
-<h3>Další informace</h3>
-<div class="box">Informace o obřadu</div>
-<div class="box">Místo konání</div>
-<div class="box">RSVP</div>
-<div class="box">Galerie fotek</div>
 </div>
 
 <script>
