@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+
 @font-face {
   font-family: 'Halimum';
   src: url('Halimun.otf') format('opentype');
@@ -21,174 +22,199 @@
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  font-family:Arial, sans-serif;
-  background:#FAFAFA;
-  text-align:center;
+font-family:Arial, sans-serif;
+background:#FAFAFA;
+text-align:center;
 }
 
 /* HEADER */
+
 header{
-  position:relative;
-  width:100%;
+position:relative;
+width:100%;
 }
 
 header img{
-  width:100%;
-  display:block;
+width:100%;
+display:block;
 }
 
-/* TEXT NA HEADERU */
+/* HEADER TEXT */
+
 .header-text{
-  position:absolute;
-  bottom:12%;
-  left:50%;
-  transform:translateX(-50%);
-  text-align:center;
-  font-family:'Cinzel Decorative', serif;
-  width:90%;
+position:absolute;
+bottom:12%;
+left:50%;
+transform:translateX(-50%);
+text-align:center;
+font-family:'Cinzel Decorative', serif;
+width:90%;
 }
 
 .header-text h1{
-  color:white;
-  font-size:22px;
-  letter-spacing:3px;
-  text-shadow:0 3px 10px rgba(0,0,0,0.6);
-  white-space:nowrap;
+color:white;
+font-size:22px;
+letter-spacing:3px;
+text-shadow:0 3px 10px rgba(0,0,0,0.6);
+white-space:nowrap;
 }
 
 .header-text h2{
-  color:white;
-  margin-top:6px;
-  font-size:18px;
-  letter-spacing:2px;
-  text-shadow:0 3px 10px rgba(0,0,0,0.6);
+color:white;
+margin-top:6px;
+font-size:18px;
+letter-spacing:2px;
+text-shadow:0 3px 10px rgba(0,0,0,0.6);
 }
 
 /* TIMER */
+
 .timer-wrapper{
-  display:flex;
-  justify-content:center;
-  margin-top:25px;
+display:flex;
+justify-content:center;
+margin-top:25px;
 }
 
 #countdown{
-  background-image:url("timer.png");
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-position:center;
-  padding:45px 30px;
-  width:320px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  grid-template-rows:auto auto;
-  column-gap:18px;
+background-image:url("timer.png");
+background-size:contain;
+background-repeat:no-repeat;
+background-position:center;
+padding:45px 30px;
+width:320px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+grid-template-rows:auto auto;
+column-gap:18px;
 }
 
-/* čísla */
 .time-number{
-  font-family: 'Open Sans', sans-serif;
-  font-size:22px;
-  font-weight:bold;
-  color:#dab33b;
+font-family:'Open Sans', sans-serif;
+font-size:22px;
+font-weight:bold;
+color:#dab33b;
 }
 
-/* text pod čísly */
 .time-label{
-  font-family: 'Halimum', serif;
-  font-size:10px;
-  color:#dab33b;
-  letter-spacing:1px;
-  margin-top:8px;
+font-family:'Halimum', serif;
+font-size:10px;
+color:#dab33b;
+letter-spacing:1px;
+margin-top:8px;
 }
 
-/* jemné posunutí čísel v timeru */
-#days{ transform: translateX(-8px); }
-#hours{ transform: translateX(-4px); }
-#minutes{ transform: translateX(4px); }
-#seconds{ transform: translateX(8px); }
+#days{ transform:translateX(-8px); }
+#hours{ transform:translateX(-4px); }
+#minutes{ transform:translateX(4px); }
+#seconds{ transform:translateX(8px); }
 
 /* BUBLINY */
-.welcome-box, .info-box, .transport-box{
-  background:#F4EFE8;
-  border-radius:16px;
-  padding:20px;
-  margin:20px auto;
-  width:90%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:#555;
-  line-height:1.6;
-  font-size:15px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+
+.welcome-box,
+.info-box,
+.transport-box{
+position:relative;
+background:#F4EFE8;
+border-radius:16px;
+padding:45px 20px 20px 20px;
+margin:40px auto;
+width:90%;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+color:#555;
+line-height:1.6;
+font-size:15px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* nadpisy u bublin budou v LeJourScript */
+/* KOLECKO S IKONOU */
+
+.bubble-icon{
+position:absolute;
+top:-35px;
+left:50%;
+transform:translateX(-50%);
+width:70px;
+height:70px;
+background:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.bubble-icon img{
+width:34px;
+}
+
+/* NADPISY */
+
 .info-box h3,
 .transport-box h3{
-  font-family: 'LeJourScript', cursive;
-  font-size:24px;
-  margin-bottom:15px;
-  color:#d2691e;
+font-family:'LeJourScript', cursive;
+font-size:24px;
+margin-bottom:15px;
+color:#d2691e;
 }
 
-/* obrázek pod welcome textem */
+/* OBRÁZEK POD WELCOME */
+
 .under-welcome{
-  width:140px;
-  margin:18px auto 0 auto;
-  display:block;
+width:140px;
+margin:18px auto 0 auto;
+display:block;
 }
 
 /* PC VERZE */
+
 @media (min-width:700px){
 
-  .time-number{
-    font-size:28px;
-  }
-
-  .time-label{
-    font-size:12px;
-  }
-
-  #countdown{
-    column-gap:20px;
-  }
-
-  .header-text h1{
-    font-size:28px;
-  }
-
-  .header-text h2{
-    font-size:22px;
-  }
-
-  .welcome-box, .info-box, .transport-box{
-    font-size:16px;
-    line-height:1.8;
-    padding:25px;
-  }
+.time-number{
+font-size:28px;
 }
 
-h3{
-  /* default h3 style pro jiné h3, pokud nějaké budou */
-  margin-bottom:15px;
-  color:#d2691e;
+.time-label{
+font-size:12px;
 }
+
+#countdown{
+column-gap:20px;
+}
+
+.header-text h1{
+font-size:28px;
+}
+
+.header-text h2{
+font-size:22px;
+}
+
+.welcome-box,
+.info-box,
+.transport-box{
+font-size:16px;
+line-height:1.8;
+padding:55px 25px 25px 25px;
+}
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<img src="header.png" alt="Header">
+
+<img src="header.png">
 
 <div class="header-text">
 <h1>VERONIKA A DANIEL</h1>
@@ -198,7 +224,9 @@ h3{
 </header>
 
 <!-- TIMER -->
+
 <div class="timer-wrapper">
+
 <div id="countdown">
 
 <div class="time-number" id="days">0</div>
@@ -212,98 +240,171 @@ h3{
 <div class="time-label">sekund</div>
 
 </div>
+
 </div>
 
-<!-- UVÍTACÍ TEXT -->
+<!-- WELCOME -->
+
 <div class="welcome-box">
+
+<div class="bubble-icon">
+<img src="galerie.png">
+</div>
 
 Vítáme vás na našem svatebním webu!<br>
 Budeme moc rádi, když s námi oslavíte naši lásku a stanete se součástí tohoto výjimečného dne.<br>
 Protože se svatba koná v úterý, budeme vděční, pokud si vyhradíte dva dny volna, aby nám nic nebránilo slavit společně až do ranních hodin.<br>
-Níže najdete všechny důležité informace:
+Níže najdete všechny důležité informace.
 
 </div>
 
 <img src="under_welcome.png" class="under-welcome">
 
-  
-<!-- BUBLINA SVATEBNÍ MÍSTO -->
+<!-- SVATEBNI MISTO -->
+
 <div class="info-box">
-<h3>Svatebni místo</h3>
-Obřad a hostina se budou konat na jednom místě a to na Zámku Chałupki.
+
+<div class="bubble-icon">
+<img src="galerie.png">
 </div>
 
-<!-- BUBLINA DOPRAVA -->
+<h3>Svatebni místo</h3>
+Obřad a hostina se budou konat na jednom místě a to na Zámku Chałupki.
+
+</div>
+
+<!-- DOPRAVA -->
+
 <div class="transport-box">
+
+<div class="bubble-icon">
+<img src="galerie.png">
+</div>
+
 <h3>Doprava</h3>
 Na místo se prosím dostavte autem, parkoviště je zdarma.<br>
 Zámek Chałupki, Bogumińska 30<br>
 Večer budou zajištění řidiči, kteří vás i s vaším autem zavezou domů.
+
 </div>
 
-<!-- BUBLINA OBRAD -->
+<!-- OBRAD -->
+
 <div class="info-box">
+
+<div class="bubble-icon">
+<img src="galerie.png">
+</div>
+
 <h3>Obrad</h3>
 Otevření areálu bude od 11:30 h.<br>
 Obřad začne ve 12:00 h, dostavte se prosím včas, minimálně 15 min. předem.
+
 </div>
 
-<!-- BUBLINA DRESS CODE -->
+<!-- DRESS CODE -->
+
 <div class="info-box">
+
+<div class="bubble-icon">
+<img src="galerie.png">
+</div>
+
 <h3>Dress Code</h3>
-Svatba se ponese v duchu elegance. Proto budeme rádi, když své outfity sladíte do pastelových 
-a tlumených tónů. Podívejte se na barevnou paletu 
-co vybrat a čemu se vyhnout.
+Svatba se ponese v duchu elegance. Proto budeme rádi, když své outfity sladíte do pastelových a tlumených tónů.
+
 </div>
 
-<!-- BUBLINA DARY -->
+<!-- DARY -->
+
 <div class="info-box">
+
+<div class="bubble-icon">
+<img src="galerie.png">
+</div>
+
 <h3>Dary</h3>
-Dary si nelámejte hlavu. Jelikož už spolu pár let žijeme, máme vše, co potřebujeme. Největší radost nám udělá příspěvek na naše společné sny a cesty za nimi.
+Dary si nelámejte hlavu. Jelikož už spolu pár let žijeme, máme vše, co potřebujeme.
+
 </div>
 
-<!-- BUBLINA DETI -->
+<!-- DETI -->
+
 <div class="info-box">
+
+<div class="bubble-icon">
+<img src="galerie.png">
+</div>
+
 <h3>Deti</h3>
-Milí rodičové, děti jsou velkou radostí, ale někdy i starostí, proto bychom vám chtěli dopřát, abyste si náš svatební den opravdu užili. Pokud je to možné, doporučujeme zajistit hlídání dětí, aby pro vás byla oslava pohodová a bezstarostná. Samozřejmě, pokud s nimi přijdete, budeme rádi, že jsou u nás také.
+Milí rodiče, děti jsou velkou radostí, ale někdy i starostí.
+
 </div>
 
-<!-- BUBLINA HARMONOGRAM -->
+<!-- HARMONOGRAM -->
+
 <div class="info-box">
+
+<div class="bubble-icon">
+<img src="galerie.png">
+</div>
+
 <h3>Harmonogram</h3>
-Náš svatební den bude plný krásných okamžiků. Ať víte, kdy se těšit na ty nejlepší z nich, podívejte se na podrobný 
-program dne.
+Náš svatební den bude plný krásných okamžiků.
+
 </div>
 
-<!-- BUBLINA UCAST -->
+<!-- POTVRZENI -->
+
 <div class="info-box">
+
+<div class="bubble-icon">
+<img src="galerie.png">
+</div>
+
 <h3>Potvrzeni ucasti</h3>
-Prosíme všechny o potvrzení vaši účasti. Ať už se svatební oslavy zúčastníte, nebo ne, vyplňte prosím krátký formulář.
+Prosíme všechny o potvrzení vaši účasti.
+
 </div>
 
-<!-- BUBLINA FOTOGALERI -->
+<!-- FOTOGALERIE -->
+
 <div class="info-box">
+
+<div class="bubble-icon">
+<img src="galerie.png">
+</div>
+
 <h3>Fotogalerie</h3>
-Pomozte nám vytvořit nezapomenutelné vzpomínky! Budeme rádi, když nám tady nahrajete vaše fotky a videa, které zachytíte v náš svatební den. 
+Pomozte nám vytvořit nezapomenutelné vzpomínky!
+
 </div>
 
-<!-- BUBLINA DEKUJEME -->
+<!-- DEKUJEME -->
+
 <div class="info-box">
+
+<div class="bubble-icon">
+<img src="galerie.png">
+</div>
+
 <h3>Dekujeme</h3>
 
 </div>
-  
+
 <script>
+
 const targetDate = new Date("August 25, 2026 12:00:00").getTime();
 
 setInterval(function(){
+
 const now = new Date().getTime();
 const distance = targetDate - now;
 
-const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+const days = Math.floor(distance / (1000*60*60*24));
+const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+const seconds = Math.floor((distance % (1000*60)) / 1000);
 
 document.getElementById("days").innerText = days;
 document.getElementById("hours").innerText = hours;
@@ -313,7 +414,9 @@ document.getElementById("seconds").innerText = seconds;
 if(distance < 0){
 document.getElementById("countdown").innerHTML="Je to tady!";
 }
+
 },1000);
+
 </script>
 
 </body>
