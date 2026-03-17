@@ -49,7 +49,6 @@ box-shadow:0 4px 12px rgba(0,0,0,0.08);
 transition: all 0.4s ease;
 transform: scale(1);
 }
-
 /* Luxusní hover na bubliny */
 .welcome-box:hover,
 .info-box:hover,
@@ -152,7 +151,7 @@ Níže najdete všechny důležité informace.
 <div class="info-box">
 <div class="bubble-icon"><img src="misto.png"></div>
 <h3>Svatebni místo</h3>
-Obřad a hostina se budou konat na jednom místě a to na <a target="_blank" href="https://maps.app.goo.gl/9tbqovwm2mZhNMKh8">Zámku Chałupki.</a>
+Obřad a hostina se budou konat na jednom místě a to na <a target="_blank" href="https://maps.app.goo.gl/9tbqovwm2mZhNMKh8" onclick="openChalupkiModal()">Zámku Chałupki, Bogumińska 30</a>.
 </div>
 
 <div class="transport-box">
@@ -173,7 +172,7 @@ Obřad začne ve 12:00 h, dostavte se prosím včas, minimálně 15 min. předem
 <div class="info-box">
 <div class="bubble-icon"><img src="dress.png"></div>
 <h3>Dress Code</h3>
-Svatba se ponese v duchu elegance. Proto budeme rádi, když své outfity sladíte do těchto barev. Podívejte se na barevnou svatební paletu.
+Svatba se ponese v duchu elegance. Podívejte se na barevnou svatební paletu.
 <div class="show-image-text" onclick="openModal()">Zobrazit barevnou paletu</div>
 
 <div id="imageModal" class="modal" onclick="if(event.target === this) closeModal()">
@@ -235,6 +234,12 @@ Pokud se večer nechcete nikam přesouvat, můžete přespat na zámečku s naš
 <img src="svatebnilogo.png" class="under-welcome">
 </div>
 
+<!-- MODAL pro chalupki -->
+<div id="chalupkiModal" class="modal" onclick="if(event.target === this) closeChalupkiModal()">
+  <span class="close" onclick="closeChalupkiModal()">&times;</span>
+  <img class="modal-content" src="chalupki.jpg">
+</div>
+
 <script>
 // Countdown
 const targetDate = new Date("August 25, 2026 12:00:00").getTime();
@@ -248,8 +253,13 @@ document.getElementById("seconds").innerText = Math.floor((distance % (1000*60))
 if(distance < 0){document.getElementById("countdown").innerHTML="Je to tady!";}
 },1000);
 
+// Modal funkce
 function openModal(){document.getElementById("imageModal").style.display = "flex";}
 function closeModal(){document.getElementById("imageModal").style.display = "none";}
+
+// Chalupki modal
+function openChalupkiModal(){document.getElementById("chalupkiModal").style.display="flex";}
+function closeChalupkiModal(){document.getElementById("chalupkiModal").style.display="none";}
 
 // 30s auto modal
 setTimeout(function(){document.getElementById("autoModal").style.display = "flex";}, 30000);
