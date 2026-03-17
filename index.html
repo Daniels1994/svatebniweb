@@ -47,7 +47,6 @@ line-height:1.6;
 font-size:15px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
 transition: all 0.4s ease;
-transform: scale(1);
 }
 
 /* Luxusní hover na bubliny */
@@ -58,7 +57,7 @@ transform: translateY(-8px) scale(1.05);
 box-shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 
-/* KOLECKO S IKONOU */
+/* KOLECKO S IKONOU - původní pozice */
 .bubble-icon{
 position:absolute;
 top:-35px;
@@ -73,6 +72,7 @@ align-items:center;
 justify-content:center;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 transition: all 0.4s ease;
+z-index:10;
 }
 .bubble-icon img{width:66px;transition: all 0.4s ease;}
 .info-box:hover .bubble-icon,.transport-box:hover .bubble-icon,.active .bubble-icon{transform:translateX(-50%) scale(1.1);box-shadow:0 6px 20px rgba(218,179,59,0.35);}
@@ -108,7 +108,7 @@ a:hover::after{width:100%;}
 .welcome-box,.info-box,.transport-box{font-size:16px;line-height:1.8;padding:55px 25px 25px 25px;}
 }
 
-/* MOBIL FIX - vypnout hover */
+/* MOBIL FIX - vypnout hover a změnit pozici bublin */
 @media (max-width:700px){
 .bubble-icon{position:relative;top:0;margin-bottom:15px;}
 .info-box h3,.transport-box h3{margin-top:0;}
@@ -179,7 +179,8 @@ Na místo se prosím dostavte autem, parkoviště je zdarma.<br>
 Večer budou zajištění řidiči, kteří vás i s vaším autem zavezou domů.
 </div>
 
-<!-- OBRAD -->
+<!-- Ostatní boxy zůstávají stejné -->
+
 <div class="info-box">
 <div class="bubble-icon"><img src="obrad.png"></div>
 <h3>Obrad</h3>
@@ -187,7 +188,6 @@ Otevření areálu bude od 11:30 h.<br>
 Obřad začne ve 12:00 h, dostavte se prosím včas, minimálně 15 min. předem.
 </div>
 
-<!-- DRESS CODE -->
 <div class="info-box">
 <div class="bubble-icon"><img src="dress.png"></div>
 <h3>Dress Code</h3>
@@ -202,14 +202,12 @@ Svatba se ponese v duchu elegance. Podívejte se na barevnou svatební paletu.
 </div>
 </div>
 
-<!-- DARY -->
 <div class="info-box">
 <div class="bubble-icon"><img src="dary.png"></div>
 <h3>Dary</h3>
 Dary si nelámejte hlavu. Jelikož už spolu pár let žijeme, máme vše, co potřebujeme. Největší radost nám udělá příspěvek na naše společné sny a cesty za nimi.
 </div>
 
-<!-- DETI -->
 <div class="info-box">
 <div class="bubble-icon"><img src="deti.png"></div>
 <h3>Deti</h3>
@@ -217,35 +215,30 @@ Milí rodičové, děti jsou velkou radostí, ale někdy i starostí, proto bych
 Pokud je to možné, doporučujeme zajistit hlídání dětí, aby pro vás byla oslava pohodová a bezstarostná. Samozřejmě, pokud s nimi přijdete, budeme rádi, že jsou u nás také.
 </div>
 
-<!-- HARMONOGRAM -->
 <div class="info-box">
 <div class="bubble-icon"><img src="harmonogram.png"></div>
 <h3>Harmonogram</h3>
 Náš svatební den bude plný krásných okamžiků. Ať víte, kdy se těšit na ty nejlepší z nich, podívejte se na podrobný program dne.
 </div>
 
-<!-- POTVRZENÍ -->
 <div class="info-box">
 <div class="bubble-icon"><img src="ucast.png"></div>
 <h3>Potvrzení účasti</h3>
 Prosíme všechny o potvrzení vaši účasti. Ať už se svatební oslavy zúčastníte, nebo ne, vyplňte prosím krátký formulář.
 </div>
 
-<!-- FOTOGALERIE -->
 <div class="info-box">
 <div class="bubble-icon"><img src="galerie.png"></div>
 <h3>Fotogalerie</h3>
 Sdílejte s námi nezapomenutelné vzpomínky! Budeme rádi, když nám na tento odkaz nahrajete vaše fotky a videa, které zachytíte v náš svatební den.
 </div>
 
-<!-- KOUŘENÍ -->
 <div class="info-box">
 <div class="bubble-icon"><img src="ciga.png"></div>
 <h3>Zákaz kouření</h3>
 Ve všech vnitřních prostorách platí úplný zákaz kouření, včetně elektronických cigaret. Za každé porušení tohoto zákazu bude účtována pokuta ve výši 3000,-
 </div>
 
-<!-- UBYTOVÁNÍ -->
 <div class="info-box">
 <div class="bubble-icon"><img src="ubytko.png"></div>
 <h3>Ubytování</h3>
