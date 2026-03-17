@@ -190,6 +190,42 @@ margin:12px auto 0 auto;
 display:block;
 }
 
+.show-image-text{
+margin-top:10px;
+color:#dab33b;
+cursor:pointer;
+text-decoration:underline;
+}
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+z-index:999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+max-width:90%;
+max-height:80%;
+border-radius:10px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:30px;
+color:white;
+font-size:30px;
+cursor:pointer;
+}
+
 /* PC VERZE */
 
 @media (min-width:700px){
@@ -322,6 +358,16 @@ Obřad začne ve 12:00 h, dostavte se prosím včas, minimálně 15 min. předem
 
 <h3>Dress Code</h3>
 Svatba se ponese v duchu elegance. Proto budeme rádi, když své outfity sladíte do těchto barev. Podívejte se na barevnou svatební paletu.
+
+<div class="show-image-text" onclick="openModal()">
+Zobrazit barevnou paletu
+</div>
+
+<!-- MODAL -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close">&times;</span>
+  <img class="modal-content" src="barvy1.png">
+</div>
 
 </div>
 
