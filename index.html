@@ -275,6 +275,11 @@ padding:55px 25px 25px 25px;
 
 <header>
 
+<div id="autoModal" class="modal">
+  <span class="close" onclick="closeAutoModal()">&times;</span>
+  <img class="modal-content" src="boston.jpg">
+</div>
+  
 <img src="header.png">
 
 <div class="header-text">
@@ -529,5 +534,26 @@ document.getElementById("imageModal").style.display = "none";
 }
 </script>
 
+<script>
+
+// po 30 sekundách zobrazí modal
+setTimeout(function(){
+document.getElementById("autoModal").style.display = "flex";
+}, 30000);
+
+// zavření kliknutím na X
+function closeAutoModal(){
+document.getElementById("autoModal").style.display = "none";
+}
+
+// zavření kliknutím mimo obrázek
+document.getElementById("autoModal").addEventListener("click", function(e){
+if(e.target === this){
+this.style.display = "none";
+}
+});
+
+</script>
+  
 </body>
 </html>
