@@ -211,9 +211,18 @@ justify-content:center;
 align-items:center;
 }
 
-.modal-content{
-max-width:90%;
+/* OBAL NA VÍCE OBRÁZKŮ */
+.modal-images{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
 max-height:80%;
+overflow:auto;
+}
+
+.modal-images img{
+max-width:90%;
 border-radius:10px;
 }
 
@@ -364,9 +373,19 @@ Zobrazit barevnou paletu
 </div>
 
 <!-- MODAL -->
+<div class="show-image-text" onclick="openModal()">
+Zobrazit barevnou paletu
+</div>
+
+<!-- MODAL -->
 <div id="imageModal" class="modal" onclick="closeModal()">
   <span class="close">&times;</span>
-  <img class="modal-content" src="barvy1.png">
+
+  <div class="modal-images">
+    <img src="barvy.png">
+    <img src="barvy2.png">
+  </div>
+
 </div>
 
 </div>
