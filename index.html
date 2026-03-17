@@ -34,7 +34,6 @@ text-align:center;
 }
 
 /* HEADER */
-
 header{
 position:relative;
 width:100%;
@@ -46,7 +45,6 @@ display:block;
 }
 
 /* HEADER TEXT */
-
 .header-text{
 position:absolute;
 bottom:12%;
@@ -74,7 +72,6 @@ text-shadow:0 3px 10px rgba(0,0,0,0.6);
 }
 
 /* TIMER */
-
 .timer-wrapper{
 display:flex;
 justify-content:center;
@@ -115,7 +112,6 @@ margin-top:8px;
 #seconds{ transform:translateX(8px); }
 
 /* BUBLINY */
-
 .welcome-box{
 position:relative;
 background:#F4EFE8;
@@ -131,6 +127,7 @@ color:#555;
 line-height:1.6;
 font-size:15px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition: all 0.3s ease;
 }
   
 .info-box,
@@ -149,10 +146,18 @@ color:#555;
 line-height:1.6;
 font-size:15px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition: all 0.3s ease;
+}
+
+/* Luxusní hover na bubliny */
+.welcome-box:hover,
+.info-box:hover,
+.transport-box:hover{
+transform: translateY(-8px);
+box-shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 
 /* KOLECKO S IKONOU */
-
 .bubble-icon{
 position:absolute;
 top:-35px;
@@ -166,14 +171,26 @@ display:flex;
 align-items:center;
 justify-content:center;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition: all 0.3s ease;
+}
+
+.info-box:hover .bubble-icon,
+.transport-box:hover .bubble-icon{
+transform: translateX(-50%) scale(1.08);
+box-shadow: 0 6px 20px rgba(218,179,59,0.35);
 }
 
 .bubble-icon img{
 width:66px;
+transition: all 0.3s ease;
+}
+
+.info-box:hover .bubble-icon img,
+.transport-box:hover .bubble-icon img{
+transform: scale(1.1);
 }
 
 /* NADPISY */
-
 .info-box h3,
 .transport-box h3{
 font-family:'LeJourScript', cursive;
@@ -183,7 +200,6 @@ color:#d2691e;
 }
 
 /* OBRÁZEK POD WELCOME */
-
 .under-welcome{
 width:300px;
 margin:12px auto 0 auto;
@@ -195,6 +211,35 @@ margin-top:10px;
 color:#dab33b;
 cursor:pointer;
 text-decoration:underline;
+transition: all 0.3s ease;
+}
+
+.show-image-text:hover{
+letter-spacing:1px;
+opacity:0.8;
+}
+
+/* ODKAZY LUXUS */
+a{
+position:relative;
+color:#dab33b;
+text-decoration:none;
+transition: all 0.3s ease;
+}
+
+a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-3px;
+width:0;
+height:1px;
+background:#dab33b;
+transition:width 0.3s ease;
+}
+
+a:hover::after{
+width:100%;
 }
 
 /* MODAL */
@@ -243,9 +288,8 @@ height:auto;
 object-fit:contain;
 border-radius:10px;
 }
-  
-/* PC VERZE */
 
+/* PC VERZE */
 @media (min-width:700px){
 
 .time-number{
@@ -299,27 +343,20 @@ padding:55px 25px 25px 25px;
 </header>
 
 <!-- TIMER -->
-
 <div class="timer-wrapper">
-
 <div id="countdown">
-
 <div class="time-number" id="days">0</div>
 <div class="time-number" id="hours">0</div>
 <div class="time-number" id="minutes">0</div>
 <div class="time-number" id="seconds">0</div>
-
 <div class="time-label">dni</div>
 <div class="time-label">hodin</div>
 <div class="time-label">minut</div>
 <div class="time-label">sekund</div>
-
 </div>
-
 </div>
 
 <!-- WELCOME -->
-
 <div class="welcome-box">
 Vítáme vás na našem svatebním webu!<br>
 Budeme moc rádi, když s námi oslavíte naši lásku a stanete se součástí tohoto výjimečného dne.<br>
@@ -329,240 +366,125 @@ Níže najdete všechny důležité informace.
 
 <img src="under_welcome.png" class="under-welcome">
 
-<!-- SVATEBNI MISTO -->
-
+<!-- BUBLINY S IKONAMI -->
 <div class="info-box">
-
-<div class="bubble-icon">
-<img src="misto.png">
-</div>
-
+<div class="bubble-icon"><img src="misto.png"></div>
 <h3>Svatebni místo</h3>
 Obřad a hostina se budou konat na jednom místě a to na <a target="_blank" href="https://maps.app.goo.gl/9tbqovwm2mZhNMKh8">Zámku Chałupki.</a>
-
 </div>
-
-<!-- DOPRAVA -->
 
 <div class="transport-box">
-
-<div class="bubble-icon">
-<img src="doprava.png">
-</div>
-
+<div class="bubble-icon"><img src="doprava.png"></div>
 <h3>Doprava</h3>
 Na místo se prosím dostavte autem, parkoviště je zdarma.<br>
 <a target="_blank" href="https://maps.app.goo.gl/9tbqovwm2mZhNMKh8">Zámek Chałupki, Bogumińska 30</a><br>
 Večer budou zajištění řidiči, kteří vás i s vaším autem zavezou domů.
-
 </div>
-
-<!-- OBRAD -->
 
 <div class="info-box">
-
-<div class="bubble-icon">
-<img src="obrad.png">
-</div>
-
+<div class="bubble-icon"><img src="obrad.png"></div>
 <h3>Obrad</h3>
 Otevření areálu bude od 11:30 h.<br>
 Obřad začne ve 12:00 h, dostavte se prosím včas, minimálně 15 min. předem.
-
 </div>
-
-<!-- DRESS CODE -->
 
 <div class="info-box">
-
-<div class="bubble-icon">
-<img src="dress.png">
-</div>
-
+<div class="bubble-icon"><img src="dress.png"></div>
 <h3>Dress Code</h3>
-Svatba se ponese v duchu elegance. Proto budeme rádi, když své outfity sladíte do těchto barev. Podívejte se na barevnou svatební paletu.
+Svatba se ponese v duchu elegance. Podívejte se na barevnou svatební paletu.
+<div class="show-image-text" onclick="openModal()">Zobrazit barevnou paletu</div>
 
-<!-- MODAL -->
-<div class="show-image-text" onclick="openModal()">
-Zobrazit barevnou paletu
-</div>
-
-<!-- MODAL -->
-<div id="imageModal" class="modal" onclick="closeModal()">
+<div id="imageModal" class="modal" onclick="if(event.target === this) closeModal()">
   <span class="close">&times;</span>
-
   <div class="modal-images">
     <img src="barvy1.png">
     <img src="barvy2.png">
   </div>
-
 </div>
-
 </div>
-
-<!-- DARY -->
 
 <div class="info-box">
-
-<div class="bubble-icon">
-<img src="dary.png">
-</div>
-
+<div class="bubble-icon"><img src="dary.png"></div>
 <h3>Dary</h3>
-Dary si nelámejte hlavu. Jelikož už spolu pár let žijeme, máme vše, co potřebujeme. Největší radost nám udělá příspěvek na naše společné sny a cesty za nimi.
-
+Dary si nelámejte hlavu. Největší radost nám udělá příspěvek na naše společné sny a cesty za nimi.
 </div>
-
-<!-- DETI -->
 
 <div class="info-box">
-
-<div class="bubble-icon">
-<img src="deti.png">
-</div>
-
+<div class="bubble-icon"><img src="deti.png"></div>
 <h3>Deti</h3>
-Milí rodičové, děti jsou velkou radostí, ale někdy i starostí, proto bychom vám chtěli dopřát, abyste si náš svatební den opravdu užili. <br>
-Pokud je to možné, doporučujeme zajistit hlídání dětí, aby pro vás byla oslava pohodová a bezstarostná. Samozřejmě, pokud s nimi přijdete, budeme rádi, že jsou u nás také.
-
+Milí rodičové, děti jsou velkou radostí, ale někdy i starostí.
 </div>
-
-<!-- HARMONOGRAM -->
 
 <div class="info-box">
-
-<div class="bubble-icon">
-<img src="harmonogram.png">
-</div>
-
+<div class="bubble-icon"><img src="harmonogram.png"></div>
 <h3>Harmonogram</h3>
-Náš svatební den bude plný krásných okamžiků. Ať víte, kdy se těšit na ty nejlepší z nich, podívejte se na podrobný 
-program dne.
-
+Náš svatební den bude plný krásných okamžiků.
 </div>
-
-<!-- POTVRZENI -->
 
 <div class="info-box">
-
-<div class="bubble-icon">
-<img src="ucast.png">
-</div>
-
+<div class="bubble-icon"><img src="ucast.png"></div>
 <h3>Potvrzeni ucasti</h3>
-Prosíme všechny o potvrzení vaši účasti. Ať už se svatební oslavy zúčastníte, nebo ne, vyplňte prosím krátký formulář.
-
+Prosíme všechny o potvrzení vaši účasti.
 </div>
-
-<!-- FOTOGALERIE -->
 
 <div class="info-box">
-
-<div class="bubble-icon">
-<img src="galerie.png">
-</div>
-
+<div class="bubble-icon"><img src="galerie.png"></div>
 <h3>Fotogalerie</h3>
-Sdílejte s námi nezapomenutelné vzpomínky! 
-Budeme rádi, když nám na tento odkaz nahrajete vaše fotky a videa, které zachytíte v náš svatební den.
-
+Sdílejte s námi nezapomenutelné vzpomínky!
 </div>
-
-<!-- KOURENI -->
 
 <div class="info-box">
-
-<div class="bubble-icon">
-<img src="ciga.png">
-</div>
-
+<div class="bubble-icon"><img src="ciga.png"></div>
 <h3>Zakaz koureni</h3>
-Ve všech vnitřních prostorách platí úplný zákaz kouření, včetně elektronických cigaret. Za každé porušení tohoto zákazu bude účtována pokuta ve výši 3000,-
+Ve všech vnitřních prostorách platí úplný zákaz kouření.
 </div>
-
-<!-- UBYTOVANI -->
 
 <div class="info-box">
-
-<div class="bubble-icon">
-<img src="ubytko.png">
-</div>
-
+<div class="bubble-icon"><img src="ubytko.png"></div>
 <h3>Ubytovani</h3>
-Pokud se večer nechcete nikam přesouvat, můžete přespat na zámečku s naší 5% slevou. Nahlašte do ....
-Podrobnosti zde:
+Pokud se večer nechcete nikam přesouvat, můžete přespat na zámečku s naší 5% slevou.
 </div>
 
 <img src="spodni.png" class="under-welcome">
 
-<!-- DEKUJEME -->
-
 <div class="info-box">
-
 <h3>Dekujeme</h3>
 <img src="svatebnilogo.png" class="under-welcome">
-  
 </div>
-  
-<!-- KONEC -->
 
+<!-- SCRIPTY -->
 <script>
-
 const targetDate = new Date("August 25, 2026 12:00:00").getTime();
-
 setInterval(function(){
-
 const now = new Date().getTime();
 const distance = targetDate - now;
-
-const days = Math.floor(distance / (1000*60*60*24));
-const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-const seconds = Math.floor((distance % (1000*60)) / 1000);
-
-document.getElementById("days").innerText = days;
-document.getElementById("hours").innerText = hours;
-document.getElementById("minutes").innerText = minutes;
-document.getElementById("seconds").innerText = seconds;
-
+document.getElementById("days").innerText = Math.floor(distance / (1000*60*60*24));
+document.getElementById("hours").innerText = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+document.getElementById("minutes").innerText = Math.floor((distance % (1000*60*60)) / (1000*60));
+document.getElementById("seconds").innerText = Math.floor((distance % (1000*60)) / 1000);
 if(distance < 0){
 document.getElementById("countdown").innerHTML="Je to tady!";
 }
-
 },1000);
 
-</script>
+function openModal(){document.getElementById("imageModal").style.display = "flex";}
+function closeModal(){document.getElementById("imageModal").style.display = "none";}
 
-<script>
-function openModal(){
-document.getElementById("imageModal").style.display = "flex";
-}
-
-function closeModal(){
-document.getElementById("imageModal").style.display = "none";
-}
-</script>
-
-<script>
-
-// po 30 sekundách zobrazí modal
+// 30s auto modal
 setTimeout(function(){
 document.getElementById("autoModal").style.display = "flex";
 }, 30000);
 
-// zavření kliknutím na X
-function closeAutoModal(){
-document.getElementById("autoModal").style.display = "none";
-}
+function closeAutoModal(){document.getElementById("autoModal").style.display = "none";}
 
-// zavření kliknutím mimo obrázek
+window.onload = function(){
 document.getElementById("autoModal").addEventListener("click", function(e){
 if(e.target === this){
 this.style.display = "none";
 }
 });
-
+}
 </script>
-  
+
 </body>
 </html>
