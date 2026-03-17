@@ -49,6 +49,7 @@ box-shadow:0 4px 12px rgba(0,0,0,0.08);
 transition: all 0.4s ease;
 transform: scale(1);
 }
+
 /* Luxusní hover na bubliny */
 .welcome-box:hover,
 .info-box:hover,
@@ -107,10 +108,13 @@ a:hover::after{width:100%;}
 .welcome-box,.info-box,.transport-box{font-size:16px;line-height:1.8;padding:55px 25px 25px 25px;}
 }
 
-/* MOBIL FIX BUBLIN */
+/* MOBIL FIX - vypnout hover */
 @media (max-width:700px){
 .bubble-icon{position:relative;top:0;margin-bottom:15px;}
 .info-box h3,.transport-box h3{margin-top:0;}
+.welcome-box:hover,.info-box:hover,.transport-box:hover{transform:none;box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+.info-box:hover .bubble-icon,.transport-box:hover .bubble-icon,.active .bubble-icon{transform:translateX(-50%) scale(1);box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+.info-box:hover .bubble-icon img,.transport-box:hover .bubble-icon img,.active .bubble-icon img{transform: scale(1);}
 }
 </style>
 </head>
@@ -189,7 +193,6 @@ Obřad začne ve 12:00 h, dostavte se prosím včas, minimálně 15 min. předem
 <h3>Dress Code</h3>
 Svatba se ponese v duchu elegance. Podívejte se na barevnou svatební paletu.
 <div class="show-image-text" onclick="openModal()">Zobrazit barevnou paletu</div>
-
 <div id="imageModal" class="modal" onclick="if(event.target === this) closeModal()">
   <span class="close">&times;</span>
   <div class="modal-images">
@@ -278,16 +281,6 @@ function closeChalupkiModal(){document.getElementById("chalupkiModal").style.dis
 // 30s auto modal
 setTimeout(function(){document.getElementById("autoModal").style.display = "flex";}, 30000);
 function closeAutoModal(){document.getElementById("autoModal").style.display = "none";}
-
-// Scroll efekt pro mobil
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){ entry.target.classList.add("active"); }
-});
-},{threshold:0.3});
-document.querySelectorAll('.welcome-box,.info-box,.transport-box').forEach(el=>{
-observer.observe(el);
-});
 </script>
 
 </body>
