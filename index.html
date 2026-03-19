@@ -23,12 +23,38 @@ header img{width:100%;display:block;}
 .header-text h1{color:white;font-size:22px;letter-spacing:3px;text-shadow:0 3px 10px rgba(0,0,0,0.6);white-space:nowrap;}
 .header-text h2{color:white;margin-top:6px;font-size:18px;letter-spacing:2px;text-shadow:0 3px 10px rgba(0,0,0,0.6);}
 
-/* TIMER */
-.timer-wrapper{display:flex;justify-content:center;margin-top:25px;}
-#countdown{background-image:url("timer.png");background-size:contain;background-repeat:no-repeat;background-position:center;padding:30px 30px 15px 30px;width:320px;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;column-gap:18px;}
-.time-number{font-family:'Open Sans', sans-serif;font-size:22px;font-weight:bold;color:#dab33b;}
-.time-label{font-family:'Halimum', serif;font-size:10px;color:#dab33b;letter-spacing:1px;margin-top:8px;}
-#days{ transform:translateX(-8px); } #hours{ transform:translateX(-4px); } #minutes{ transform:translateX(4px); } #seconds{ transform:translateX(8px); }
+#countdown{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+.time-box{
+  background-image:url("timer.png");
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+  width:80px;
+  height:90px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.time-number{
+  font-family:'Open Sans', sans-serif;
+  font-size:20px;
+  font-weight:bold;
+  color:#dab33b;
+}
+
+.time-label{
+  font-family:'Halimum', serif;
+  font-size:10px;
+  color:#dab33b;
+  margin-top:5px;
+}
 
 /* BUBLINY */
 .welcome-box,.info-box,.transport-box{
@@ -124,17 +150,31 @@ a:hover::after{width:100%;}
 </div>
 </header>
 
+<!-- TIMER -->
 <div class="timer-wrapper">
-<div id="countdown">
-<div class="time-number" id="days">0</div>
-<div class="time-number" id="hours">0</div>
-<div class="time-number" id="minutes">0</div>
-<div class="time-number" id="seconds">0</div>
-<div class="time-label">dni</div>
-<div class="time-label">hodin</div>
-<div class="time-label">minut</div>
-<div class="time-label">sekund</div>
-</div>
+  <div id="countdown">
+    
+    <div class="time-box">
+      <div class="time-number" id="days">0</div>
+      <div class="time-label">dni</div>
+    </div>
+
+    <div class="time-box">
+      <div class="time-number" id="hours">0</div>
+      <div class="time-label">hodin</div>
+    </div>
+
+    <div class="time-box">
+      <div class="time-number" id="minutes">0</div>
+      <div class="time-label">minut</div>
+    </div>
+
+    <div class="time-box">
+      <div class="time-number" id="seconds">0</div>
+      <div class="time-label">sekund</div>
+    </div>
+
+  </div>
 </div>
 
 <div class="welcome-box">
