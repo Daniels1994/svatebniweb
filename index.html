@@ -145,15 +145,17 @@ a:hover::after{width:100%;}
 /* BOSTON */
 #boston-slide {
   position: fixed;
-  bottom: -100%; /* začíná mimo obrazovku */
+  bottom: -100%; 
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
-  transition: bottom 1s ease-in-out; /* plynulý pohyb nahoru a dolů */
+  transition: bottom 1s ease-in-out;
+  display: none; /* start hidden */
 }
 
 #boston-slide.active {
-  bottom: 0; /* vysune se nahoru do viditelné oblasti */
+  display: block;  /* zobrazí se */
+  bottom: 0;
 }
   
 /* PC VERZE */
@@ -271,13 +273,23 @@ Večer budou zajištění řidiči, kteří vás i s vaším autem zavezou domů
 function slideBoston() {
   const slide = document.getElementById("boston-slide");
   
-  // vysuneme obrázek
-  slide.classList.add("active");
+  // zobrazíme div
+  slide.style.display = "block";
+
+  // krátká prodleva, aby se transition správně spustila
+  setTimeout(() => {
+    slide.classList.add("active");
+  }, 50);
 
   // po 5 sekundách se zase schová
   setTimeout(() => {
     slide.classList.remove("active");
-  }, 5000); // obrázek vidět 5 sekund
+
+    // po ukončení animace znovu skryjeme display
+    setTimeout(() => {
+      slide.style.display = "none";
+    }, 1000); // musí být stejné jako transition
+  }, 5050);
 }
 
 // spustí poprvé **po 30 sekundách**
