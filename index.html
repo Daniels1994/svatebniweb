@@ -142,6 +142,20 @@ a:hover::after{width:100%;}
 .close{position:absolute;top:20px;right:30px;color:white;font-size:30px;cursor:pointer;}
 .modal-content{max-width:90vw;max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:10px;}
 
+/* BOSTON */
+#boston-slide {
+  position: fixed;
+  bottom: -100%; /* start mimo obrazovku */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50; /* aby byl nad ostatním */
+  transition: bottom 1s ease-in-out; /* plynulý pohyb */
+}
+
+#boston-slide.active {
+  bottom: 0; /* vysune se až dolů */
+}
+  
 /* PC VERZE */
 @media (min-width:700px){
 .time-number{font-size:28px;}
@@ -252,6 +266,30 @@ Večer budou zajištění řidiči, kteří vás i s vaším autem zavezou domů
 <img src="spodni.png" class="under-welcome">
 
 <div class="info-box"><h3>Děkujeme</h3><img src="svatebnilogo.png" class="under-welcome"></div>
+
+<div id="boston-slide">
+  <img src="boston.png" alt="Boston">
+</div>
+
+<script>
+function slideBoston() {
+  const slide = document.getElementById("boston-slide");
+  
+  // vysuneme obrázek
+  slide.classList.add("active");
+
+  // po 5 sekundách se zase schová
+  setTimeout(() => {
+    slide.classList.remove("active");
+  }, 5000); // 5000ms = 5s, jak dlouho bude obrázek vidět
+}
+
+// každých 30 sekund spustí animaci
+setInterval(slideBoston, 30000);
+
+// pokud chceš, může se poprvé spustit hned při načtení
+slideBoston();
+</script>
 
 <script>
 // Countdown
