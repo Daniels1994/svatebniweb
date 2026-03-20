@@ -145,15 +145,15 @@ a:hover::after{width:100%;}
 /* BOSTON */
 #boston-slide {
   position: fixed;
-  bottom: -100%; /* start mimo obrazovku */
+  bottom: -100%; /* začíná mimo obrazovku */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 50; /* aby byl nad ostatním */
-  transition: bottom 1s ease-in-out; /* plynulý pohyb */
+  z-index: 50;
+  transition: bottom 1s ease-in-out; /* plynulý pohyb nahoru a dolů */
 }
 
 #boston-slide.active {
-  bottom: 0; /* vysune se až dolů */
+  bottom: 0; /* vysune se nahoru do viditelné oblasti */
 }
   
 /* PC VERZE */
@@ -281,14 +281,16 @@ function slideBoston() {
   // po 5 sekundách se zase schová
   setTimeout(() => {
     slide.classList.remove("active");
-  }, 5000); // 5000ms = 5s, jak dlouho bude obrázek vidět
+  }, 5000); // obrázek vidět 5 sekund
 }
 
-// každých 30 sekund spustí animaci
-setInterval(slideBoston, 30000);
+// spustí poprvé **po 30 sekundách**
+setTimeout(() => {
+  slideBoston();
 
-// pokud chceš, může se poprvé spustit hned při načtení
-slideBoston();
+  // potom opakujeme každých 30 sekund
+  setInterval(slideBoston, 30000);
+}, 30000);
 </script>
 
 <script>
