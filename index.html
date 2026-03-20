@@ -135,13 +135,45 @@ a{position:relative;color:#dab33b;text-decoration:none;transition: all 0.3s ease
 a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:1px;background:#dab33b;transition:width 0.3s ease;}
 a:hover::after{width:100%;}
 
-/* MODAL */
+/* MODAL 
 .modal{display:none;position:fixed;z-index:999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;}
 .modal-images{display:flex;flex-direction:column;align-items:center;gap:20px;max-height:90vh;overflow:auto;}
 .modal-images img{max-width:90%;border-radius:10px;}
 .close{position:absolute;top:20px;right:30px;color:white;font-size:30px;cursor:pointer;}
 .modal-content{max-width:90vw;max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:10px;}
+*/
+  
+/* Modal pro barevnou paletu */
+#imageModal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(218, 179, 59, 0.95); /* zlaté pozadí s jemnou průhledností */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: auto;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
 
+#imageModal .modal-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#imageModal .modal-images img {
+  max-width: 90%;
+  border-radius: 10px;
+}
+  
 /* BOSTON */
 #boston-slide {
   position: fixed;
