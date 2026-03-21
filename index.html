@@ -266,37 +266,43 @@ Večer budou zajištění řidiči, kteří vás i s vaším autem zavezou domů
 <div class="info-box"><h3>Děkujeme</h3><img src="svatebnilogo.png" class="under-welcome"></div>
 
 <div id="boston-slide">
-  <img src="boston.png" alt="Boston">
+  <img id="boston-img" src="boston.png" alt="Slide image">
 </div>
 
 <script>
+const images = ["boston.png", "cinca.png"];
+let currentIndex = 0;
+
 function slideBoston() {
   const slide = document.getElementById("boston-slide");
-  
-  // zobrazíme div
+  const img = document.getElementById("boston-img");
+
+  // nastav aktuální obrázek
+  img.src = images[currentIndex];
+
+  // přepni index na další (0 → 1 → 0 → 1...)
+  currentIndex = (currentIndex + 1) % images.length;
+
+  // zobraz div
   slide.style.display = "block";
 
-  // krátká prodleva, aby se transition správně spustila
   setTimeout(() => {
     slide.classList.add("active");
   }, 50);
 
-  // po 5 sekundách se zase schová
+  // schování po 5s
   setTimeout(() => {
     slide.classList.remove("active");
 
-    // po ukončení animace znovu skryjeme display
     setTimeout(() => {
       slide.style.display = "none";
-    }, 1000); // musí být stejné jako transition
+    }, 1000);
   }, 5050);
 }
 
-// spustí poprvé **po 30 sekundách**
+// start po 30s
 setTimeout(() => {
   slideBoston();
-
-  // potom opakujeme každých 30 sekund
   setInterval(slideBoston, 30000);
 }, 30000);
 </script>
