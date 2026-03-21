@@ -136,9 +136,31 @@ a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:1px;back
 a:hover::after{width:100%;}
 
 /* MODAL */
-.modal{display:none;position:fixed;z-index:999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;}
+@media (max-width:600px){
+  .modal-images img{
+    height:300px;
+  }
+}
+  
+.modal{
+  display:none;
+  position:fixed;
+  z-index:999;
+  left:0;
+  top:0;
+  width:100vw;   /* místo 100% */
+  height:100vh;  /* místo 100% */
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+}
 .modal-images{display:flex;flex-direction:column;align-items:center;gap:20px;max-height:90vh;overflow:auto;}
-.modal-images img{max-width:90%;border-radius:10px;}
+.modal-images img{
+  height:480px;
+  width:auto;
+  border-radius:10px;
+  object-fit:contain;
+}
 .close{position:absolute;top:20px;right:30px;color:white;font-size:30px;cursor:pointer;}
 .modal-content{max-width:90vw;max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:10px;}
     
@@ -321,7 +343,10 @@ if(distance < 0){document.getElementById("countdown").innerHTML="Je to tady!";}
 },1000);
 
 // Modaly
-function openModal(){document.getElementById("imageModal").style.display = "flex";}
+function openModal(){
+  const modal = document.getElementById("imageModal");
+  modal.style.display = "flex"; /* důležité */
+}
 function closeModal(){document.getElementById("imageModal").style.display = "none";}
 function openChalupkiModal(){document.getElementById("chalupkiModal").style.display="flex";}
 function closeChalupkiModal(){document.getElementById("chalupkiModal").style.display="none";}
