@@ -145,7 +145,7 @@ a:hover::after{width:100%;}
 .modal{
   display:none;
   position:fixed;
-  z-index:999;
+  z-index:9999;
   left:0;
   top:0;
   width:100vw;   /* místo 100% */
@@ -268,9 +268,24 @@ Večer budou zajištění řidiči, kteří vás i s vaším autem zavezou domů
 
 <div class="info-box"><div class="bubble-icon"><img src="venca.png"></div><h3>Vaclav</h3>Na akci bude i Vášek, který rád přitomným slečnám provede důkladnou gynekologickou prohlídku. Milé slečny a dámy nebojte se ho oslovit. Již přes 100 spokojených zákaznic.</div>
   
-<div class="info-box"><div class="bubble-icon"><img src="dress.png"></div><h3>Dress Code</h3>Svatba se ponese v duchu elegance. Podívejte se na barevnou svatební paletu.<div class="show-image-text" onclick="openModal()">Zobrazit barevnou paletu</div>
-<div id="imageModal" class="modal" onclick="if(event.target === this) closeModal()"><span class="close" onclick="closeModal()">&times;</span><div class="modal-images" onclick="event.stopPropagation()">Šaty pro ženy a doplňky pro muže<img src="barvy1.png">Oblek pro muže<img src="barvy2.png"></div></div></div>
+<div class="info-box">
+  <div class="bubble-icon"><img src="dress.png"></div>
+  <h3>Dress Code</h3>
+  Svatba se ponese v duchu elegance. Podívejte se na barevnou svatební paletu.
+  <div class="show-image-text" onclick="openModal()">Zobrazit barevnou paletu</div>
+</div>
 
+<!-- MODAL VENKU -->
+<div id="imageModal" class="modal" onclick="if(event.target === this) closeModal()">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="modal-images" onclick="event.stopPropagation()">
+    Šaty pro ženy a doplňky pro muže
+    <img src="barvy1.png">
+    Oblek pro muže
+    <img src="barvy2.png">
+  </div>
+</div>
+  
 <div class="info-box"><div class="bubble-icon"><img src="dary.png"></div><h3>Svatebni dary</h3>Dary si nelámejte hlavu. Jelikož už spolu pár let žijeme, máme vše, co potřebujeme. Největší radost nám udělá příspěvek na naše společné sny a cesty za nimi.</div>
 
 <div class="info-box"><div class="bubble-icon"><img src="kviti.png"></div><h3>Kviti</h3>Na svatbě bude bohatá květinová výzdoba, a proto bychom Vás chtěli s vděčností poprosit, abyste nám další květiny nenosili. Pokud byste chtěli k obálce připojit drobnou pozornost, potěší nás něco dobrého nebo milá vzpomínka.</div>
