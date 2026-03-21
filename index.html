@@ -155,9 +155,11 @@ a:hover::after{width:100%;}
   align-items:center;
 }
 .modal-images{display:flex;flex-direction:column;align-items:center;gap:20px;max-height:90vh;overflow:auto;}
-.modal-images img{
-  height:240px;
-  width:auto;
+.modal-images img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 .close{position:absolute;top:20px;right:30px;color:white;font-size:30px;cursor:pointer;}
 .modal-content{max-width:90vw;max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:10px;}
